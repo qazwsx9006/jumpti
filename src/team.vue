@@ -1,17 +1,5 @@
 <template>
   <div class="tmp">
-    <ul class="table" id="team">
-      <li
-        v-for="n in 8"
-        v-bind:key="n"
-        v-bind:class="{ selected: n == targetIcon }"
-      >
-        <teamIcon
-          v-bind:hero="selectedHeros[n]"
-          v-on:click.native="updateTarget(n)"
-        ></teamIcon>
-      </li>
-    </ul>
     <ul class="table" id="hero">
       <li
         v-for="(hero, heroId) in HeroList"
@@ -24,7 +12,19 @@
         ></teamIcon>
       </li>
     </ul>
-    <button v-on:click="updateHeroList">change</button>
+    <ul class="table" id="team">
+      <li
+        v-for="n in 8"
+        v-bind:key="n"
+        v-bind:class="{ selected: n == targetIcon }"
+      >
+        <teamIcon
+          v-bind:hero="selectedHeros[n]"
+          v-on:click.native="updateTarget(n)"
+        ></teamIcon>
+      </li>
+    </ul>
+    <!-- <button v-on:click="updateHeroList">change</button> -->
   </div>
 </template>
 
@@ -101,7 +101,8 @@ module.exports = {
   height: 100%;
   background: #ff9;
   list-style: none;
-  padding: 0;
+  padding: 3px;
+  box-sizing: border-box;
 }
 .table:after,
 .tmp:after {
@@ -113,9 +114,14 @@ module.exports = {
   float: left;
   width: 25%;
   height: 25%;
-  outline: 1px solid #000;
+  outline: 1px solid rgba(200, 200, 200, 0.4);
 }
-.table .selected .hello {
-  background: #f00;
+
+#hero {
+  background: #af7;
+}
+
+#team .selected {
+  background: #fc6;
 }
 </style>

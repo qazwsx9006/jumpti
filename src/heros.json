@@ -1,20 +1,25 @@
 {
   "default": {
+    "imageUrl": "",
     "name": "null",
     "book": "",
     "powerUp": false,
     "attack": "none"
   },
   "goku": {
+    "imageUrl": "https://img.game8.jp/3148332/b91dcf300eba93913d8f4e2b5db51edd.png/show",
     "name": "孫悟空",
     "book": "七龍珠",
     "powerUp": true,
-    "attack": "single"
+    "attack": "single",
+    "color": "yellow"
   },
   "naruto": {
+    "imageUrl": "https://img.game8.jp/3148304/fe4fed4dd53df449e12b82740607a6ef.png/show",
     "name": "鳴人",
     "book": "火影忍者",
     "powerUp": false,
-    "attack": "all"
+    "attack": "all",
+    "color": "yellow"
   }
 }
