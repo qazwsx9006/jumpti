@@ -1,0 +1,20 @@
+{
+  "default": {
+    "name": "null",
+    "book": "",
+    "powerUp": false,
+    "attack": "none"
+  },
+  "goku": {
+    "name": "孫悟空",
+    "book": "七龍珠",
+    "powerUp": true,
+    "attack": "single"
+  },
+  "naruto": {
+    "name": "鳴人",
+    "book": "火影忍者",
+    "powerUp": false,
+    "attack": "all"
+  }
+}
