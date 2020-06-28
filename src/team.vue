@@ -6,22 +6,17 @@
         v-bind:key="heroId"
         v-bind:class="{ selected: heroId == currentSelectHero }"
       >
-        <teamIcon
-          v-bind:hero="hero"
-          v-on:click.native="updateSelected(heroId)"
-        ></teamIcon>
+        <teamIcon v-bind:hero="hero" v-on:click.native="updateSelected(heroId)"></teamIcon>
       </li>
     </ul>
     <ul class="table" id="team">
-      <li
-        v-for="n in 8"
-        v-bind:key="n"
-        v-bind:class="{ selected: n == targetIcon }"
-      >
-        <teamIcon
-          v-bind:hero="selectedHeros[n]"
-          v-on:click.native="updateTarget(n)"
-        ></teamIcon>
+      <li v-for="n in 16" v-bind:key="n" v-bind:class="{ selected: n == targetIcon }">
+        <teamIcon v-bind:hero="selectedHeros[n]" v-on:click.native="updateTarget(n)"></teamIcon>
+      </li>
+    </ul>
+    <ul class="table" id="info">
+      <li>
+        <heroInfo v-bind:heroInfo="currentHeroInfo"></heroInfo>
       </li>
     </ul>
     <!-- <button v-on:click="updateHeroList">change</button> -->
@@ -29,13 +24,14 @@
 </template>
 
 <script>
-import teamIcon from "./teamIcon.vue";
+import teamIcon from "./team-icon.vue";
+import heroInfo from "./hero-info.vue";
 import heros from "./heros.json";
 var HeroList = JSON.parse(JSON.stringify(heros));
 delete HeroList["default"];
 
 module.exports = {
-  components: { teamIcon },
+  components: { teamIcon, heroInfo },
   data: function() {
     return {
       HeroList,
@@ -48,25 +44,37 @@ module.exports = {
         "6": heros.default,
         "7": heros.default,
         "8": heros.default,
+        "9": heros.default,
+        "10": heros.default,
+        "11": heros.default,
+        "12": heros.default,
+        "13": heros.default,
+        "14": heros.default,
+        "15": heros.default,
+        "16": heros.default
       },
       targetIcon: 1,
       currentSelectHero: Object.keys(heros)[1],
+      currentHeroInfo: heros.default
     };
   },
   methods: {
     updateTarget: function(key) {
       if (this.targetIcon == key && this.selectedHeros[key]) {
         this.selectedHeros[key] = heros.default;
+      } else {
+        this.currentHeroInfo = this.selectedHeros[key];
       }
       this.targetIcon = key;
     },
     updateSelected: function(heroId) {
       this.currentSelectHero = heroId;
       const hero = heros[heroId];
+      this.currentHeroInfo = hero;
 
       const currentHero = this.selectedHeros[this.targetIcon];
       const existHeroKey = Object.keys(this.selectedHeros).find(
-        (key) => this.selectedHeros[key].name === hero.name
+        key => this.selectedHeros[key].name === hero.name
       );
       if (existHeroKey) {
         if (currentHero.name != "null") {
@@ -83,8 +91,8 @@ module.exports = {
       } else {
         this.HeroList = HeroList;
       }
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -92,17 +100,18 @@ module.exports = {
 .tmp {
   height: 100%;
   width: 100%;
-  max-width: 700px;
+  max-width: 1280px;
   margin: auto;
 }
 .table {
   float: left;
-  width: 50%;
+  width: 33.333%;
   height: 100%;
-  background: #ff9;
+  background: url("../public/images/bg.jpg");
   list-style: none;
   padding: 3px;
   box-sizing: border-box;
+  overflow: auto;
 }
 .table:after,
 .tmp:after {
@@ -113,15 +122,21 @@ module.exports = {
 .table li {
   float: left;
   width: 25%;
-  height: 25%;
-  outline: 1px solid rgba(200, 200, 200, 0.4);
+  padding: 1px;
+  box-sizing: border-box;
 }
 
-#hero {
-  background: #af7;
+#team {
+  box-shadow: 0 0 10px #666;
+  z-index: 1;
 }
 
 #team .selected {
-  background: #fc6;
+  background: rgba(180, 125, 0, 0.5);
+}
+
+#info li {
+  width: 100%;
+  height: 100%;
 }
 </style>

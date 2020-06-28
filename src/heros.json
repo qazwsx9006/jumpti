@@ -1,25 +1,62 @@
 {
   "default": {
-    "imageUrl": "",
-    "name": "null",
+    "imageUrl": "../public/images/default.png",
+    "name": "",
     "book": "",
     "powerUp": false,
-    "attack": "none"
+    "attackRange": "none",
+    "hp": 3333,
+    "attack": 123,
+    "recovery": 123321,
+    "type": "平衡",
+    "color": "none",
+    "skill": "abc",
+    "friend": "def",
+    "special": "ghu"
   },
   "goku": {
-    "imageUrl": "https://img.game8.jp/3148332/b91dcf300eba93913d8f4e2b5db51edd.png/show",
+    "imageUrl": "../public/images/dragon-ball/goku.png",
     "name": "孫悟空",
     "book": "七龍珠",
     "powerUp": true,
-    "attack": "single",
-    "color": "yellow"
+    "attackRange": "single",
+    "hp": 9678,
+    "attack": 2451,
+    "recovery": 1637,
+    "type": "攻擊",
+    "color": "yellow",
+    "skill": "對敵方造成327%的傷害",
+    "friend": "2回合黃屬性的攻擊力39% (CD 11回合)",
+    "special": "連接黃色氣泡六個以上的回合，自身的攻擊力21%UP"
   },
   "naruto": {
-    "imageUrl": "https://img.game8.jp/3148304/fe4fed4dd53df449e12b82740607a6ef.png/show",
+    "imageUrl": "../public/images/naruto/naruto.png",
     "name": "鳴人",
     "book": "火影忍者",
+    "powerUp": true,
+    "attackRange": "single",
+    "hp": 9697,
+    "attack": 2434,
+    "recovery": 1645,
+    "type": "攻擊",
+    "color": "yellow",
+    "skill": "對敵方單體造成攻擊力304%的傷害，目標為反擊之時，解除並造成70%額外傷害",
+    "friend": "2回合我發全體攻擊力34%UP",
+    "special": "自身承受的傷害減輕500、不會受到氣泡無效效果"
+  },
+  "toujou": {
+    "imageUrl": "../public/images/100Strawberry/role1.png",
+    "name": "東城綾",
+    "book": "草莓100%",
     "powerUp": false,
-    "attack": "all",
-    "color": "yellow"
+    "attackRange": "none",
+    "hp": 9304,
+    "attack": 1648,
+    "recovery": 2858,
+    "type": "回復",
+    "color": "green",
+    "skill": "使HP以回復力236%進行回復",
+    "friend": "3回合回合結束時使HP以回復力的46%進行回復、2回合綠屬性的回復力28%UP (CD 12回合)",
+    "special": "戰鬥開始之後，回合結束時使HP相應的回復力132%回復"
   }
 }
