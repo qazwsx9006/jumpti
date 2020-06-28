@@ -1,6 +1,6 @@
 {
   "default": {
-    "imageUrl": "../public/images/default.png",
+    "imageUrl": "./images/default.png",
     "name": "",
     "book": "",
     "powerUp": false,
@@ -15,7 +15,7 @@
     "special": "ghu"
   },
   "goku": {
-    "imageUrl": "../public/images/dragon-ball/goku.png",
+    "imageUrl": "./images/dragon-ball/goku.png",
     "name": "孫悟空",
     "book": "七龍珠",
     "powerUp": true,
@@ -30,7 +30,7 @@
     "special": "連接黃色氣泡六個以上的回合，自身的攻擊力21%UP"
   },
   "naruto": {
-    "imageUrl": "../public/images/naruto/naruto.png",
+    "imageUrl": "./images/naruto/naruto.png",
     "name": "鳴人",
     "book": "火影忍者",
     "powerUp": true,
@@ -45,7 +45,7 @@
     "special": "自身承受的傷害減輕500、不會受到氣泡無效效果"
   },
   "toujou": {
-    "imageUrl": "../public/images/100Strawberry/role1.png",
+    "imageUrl": "./images/100Strawberry/role1.png",
     "name": "東城綾",
     "book": "草莓100%",
     "powerUp": false,
